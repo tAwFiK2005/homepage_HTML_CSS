@@ -625,7 +625,7 @@ section#features .features_card p {
   align-items: center;
   justify-content: center;
   background-color: #FDF6E4;
-  padding: 260px 100px 600px;
+  padding: 260px 100px 120px;
   gap: 30px;
 }
 #app h2 {
@@ -798,8 +798,12 @@ a.btn-google {
   font-weight: 400;
 }
 
+body {
+  background: #FDF6E4 !important;
+}
+
 footer {
-  margin: -440px auto;
+  margin: 0 auto;
   background-color: #1E1E1E;
   position: relative;
   border-top-left-radius: 64px;
@@ -807,15 +811,19 @@ footer {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   padding: 40px 40px;
   z-index: 10;
-  width: 80%;
-  max-height: 66vh;
-  color: #ddd;
+  width: 70%;
+  min-width: 320px;
+  min-height: 30vh;
+  color: #FDF6E4;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-wrap: nowrap;
   align-items: flex-start;
   gap: 40px;
+}
+footer footer {
+  flex-shrink: 0;
 }
 footer .main_footer {
   height: 100%;
@@ -823,8 +831,9 @@ footer .main_footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: nowrap;
-  gap: 200px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  gap: 100px;
   font-family: "Lato", sans-serif;
 }
 footer .main_footer #footer_top_left_content {
