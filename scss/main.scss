@@ -1,0 +1,26 @@
+@use './variables';
+@use './nav';
+@use './header';
+@use '_advertisment';
+@use './features';
+@use './Courses';
+@use './steps';
+@use './order';
+@use './app';
+@use './footer';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+h1, h2, h3, h4, h5, h6 {
+    color: var(--secondary-color);
+}
+p {
+    line-height: 1.6;
+}

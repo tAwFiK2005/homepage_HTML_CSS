@@ -1,0 +1,114 @@
+// Main container for the features section
+section#features {
+    background-color: #FDFDFB; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    flex-wrap: wrap;
+    padding: 100px 5%;
+    gap: 30px;
+    font-family: 'Poppins', sans-serif;
+    flex-shrink: 0;
+
+    #features_head {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 50px;
+        align-items: flex-start; 
+        background-color: #212529;
+        color: #ffffff;
+        padding: 40px;
+        border-radius: 15px;
+        flex-wrap: nowrap;
+        width: calc(60% - 200px); 
+        min-height: 450px; // Ensure a minimum height
+        padding: 80px 60px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 0;
+            color: #ffffff;
+            max-width: 60%;
+
+            // Highlighting the "Features" text
+            #features_head_Features {
+                line-height: 1;
+                font-style: italic;
+                font-weight: 300;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                color: #D9B269; // Using the color from your button style
+            }
+        }
+
+        a {
+            text-decoration: none;
+            margin-top: auto; // Pushes the button to the bottom
+
+            button {
+                background-color: #D9B269;
+                color: #212529;
+                border: none;
+                padding: 15px 30px;
+                font-size: 1rem;
+                font-weight: 600;
+                border-radius: 50px;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+
+                // Hover effect for the button
+                &:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+    }
+
+    .features_card {
+        background-color: #ffffff;
+        padding: 35px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 2);
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: calc(35% - 150px); // Adjusted for better responsiveness
+        min-height: 450px; // Ensure a minimum height
+
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #343a40;
+            margin: 0;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #6c757d;
+            line-height: 1.6;
+            margin: 0;
+        }
+    }
+}
