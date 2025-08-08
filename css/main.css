@@ -112,6 +112,9 @@ button.signup_btn:hover a {
 #header {
   background-color: white;
   padding: 100px 0px 0px;
+  /* --- Responsive Breakpoints --- */
+  /* Tablets and below */
+  /* Mobile */
 }
 #header .header_head {
   width: calc(50% - 150px);
@@ -175,7 +178,7 @@ button.signup_btn:hover a {
 }
 #header .header_m .header_image img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 #header .stats-bar {
   display: flex;
@@ -192,6 +195,7 @@ button.signup_btn:hover a {
   margin: 0;
   padding: 0;
   gap: 80px;
+  flex-wrap: wrap;
 }
 #header .stats-bar .stat-item {
   display: flex;
@@ -214,6 +218,60 @@ button.signup_btn:hover a {
   padding-left: 80px;
   border-left: 1px solid #bcb90c;
 }
+@media (max-width: 992px) {
+  #header .header_head,
+  #header .enrollnow {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+  #header .header_m {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+  }
+  #header .enrollnow button {
+    width: 200px;
+    height: 60px;
+    font-size: 20px;
+  }
+  #header .enrollnow button a {
+    font-size: 20px;
+  }
+  #header .stats-bar ul {
+    gap: 40px;
+  }
+  #header .stats-bar .stat-item:not(:first-child) {
+    padding-left: 40px;
+  }
+}
+@media (max-width: 576px) {
+  #header {
+    padding: 50px 0 0;
+  }
+  #header .header_head h1 {
+    font-size: 2rem;
+  }
+  #header .enrollnow button {
+    width: 180px;
+    height: 50px;
+    font-size: 18px;
+  }
+  #header .enrollnow button a {
+    font-size: 18px;
+  }
+  #header .stats-bar {
+    padding: 50px 0;
+  }
+  #header .stats-bar ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+  #header .stats-bar .stat-item:not(:first-child) {
+    padding-left: 0;
+    border-left: none;
+  }
+}
 
 section#advertisment_section {
   background-color: #FDF6E4;
@@ -223,6 +281,9 @@ section#advertisment_section {
   flex-wrap: wrap;
   padding: 40px 100px;
   gap: 40px;
+  /* --- Responsive --- */
+  /* Tablet */
+  /* Mobile */
 }
 section#advertisment_section div#advertisment_image {
   width: calc(50% - 100px);
@@ -230,16 +291,16 @@ section#advertisment_section div#advertisment_image {
 }
 section#advertisment_section div#advertisment_image img {
   width: 100%;
-  height: 100%;
+  height: auto;
   border-radius: 10px;
 }
 section#advertisment_section div#advertisment_text {
   width: calc(40% - 100px);
-  height: calc(100% - 80px);
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px;
 }
 section#advertisment_section div#advertisment_text h2 {
@@ -261,9 +322,48 @@ section#advertisment_section div#advertisment_text h2 span {
 }
 section#advertisment_section div#advertisment_text p {
   font-size: 1rem;
-  line-height: 1.2;
+  line-height: 1.4;
   text-align: left;
   color: #A29E95;
+}
+@media (max-width: 992px) {
+  section#advertisment_section {
+    padding: 30px 40px;
+  }
+  section#advertisment_section div#advertisment_image,
+  section#advertisment_section div#advertisment_text {
+    width: 100%;
+    max-width: 100%;
+  }
+  section#advertisment_section div#advertisment_text {
+    align-items: center;
+    text-align: center;
+  }
+  section#advertisment_section div#advertisment_text h2 {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+  section#advertisment_section div#advertisment_text p {
+    text-align: center;
+  }
+}
+@media (max-width: 576px) {
+  section#advertisment_section {
+    padding: 20px;
+  }
+  section#advertisment_section div#advertisment_text {
+    gap: 15px;
+  }
+  section#advertisment_section div#advertisment_text h2 {
+    font-size: 1.8rem;
+  }
+  section#advertisment_section div#advertisment_text h2 span {
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+  }
+  section#advertisment_section div#advertisment_text p {
+    font-size: 0.9rem;
+  }
 }
 
 section#features {
@@ -277,6 +377,9 @@ section#features {
   gap: 30px;
   font-family: "Poppins", sans-serif;
   flex-shrink: 0;
+  /* --- Responsive Styles --- */
+  /* Tablet */
+  /* Mobile */
 }
 section#features #features_head {
   display: flex;
@@ -286,12 +389,11 @@ section#features #features_head {
   align-items: flex-start;
   background-color: #212529;
   color: #ffffff;
-  padding: 40px;
+  padding: 80px 60px;
   border-radius: 15px;
   flex-wrap: nowrap;
   width: calc(60% - 200px);
   min-height: 450px;
-  padding: 80px 60px;
   box-shadow: 0 10px 25px rgb(0, 0, 0);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -366,10 +468,60 @@ section#features .features_card p {
   line-height: 1.6;
   margin: 0;
 }
+@media (max-width: 992px) {
+  section#features {
+    flex-direction: column;
+  }
+  section#features #features_head,
+  section#features .features_card {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+  }
+  section#features #features_head {
+    align-items: center;
+    text-align: center;
+  }
+  section#features #features_head h2 {
+    max-width: 100%;
+    font-size: 2rem;
+  }
+}
+@media (max-width: 576px) {
+  section#features {
+    padding: 50px 5%;
+  }
+  section#features #features_head {
+    padding: 40px 20px;
+    gap: 30px;
+  }
+  section#features #features_head h2 {
+    font-size: 1.6rem;
+  }
+  section#features #features_head a button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  section#features .features_card {
+    padding: 20px;
+  }
+  section#features .features_card img {
+    width: 80px;
+  }
+  section#features .features_card h3 {
+    font-size: 1.2rem;
+  }
+  section#features .features_card p {
+    font-size: 0.9rem;
+  }
+}
 
 #courses {
   padding: 80px 100px;
   background-color: #1F1F1F;
+  /* --- Responsive --- */
+  /* Tablet: 2 cards per row */
+  /* Mobile: 1 card per row */
 }
 #courses h2 {
   color: #fff;
@@ -393,11 +545,10 @@ section#features .features_card p {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   flex-wrap: wrap;
   gap: 30px;
   font-family: "Poppins", sans-serif;
-  flex-shrink: 0;
 }
 #courses .courses_cards .course_card {
   background-color: #fff;
@@ -407,7 +558,9 @@ section#features .features_card p {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-height: 680px;
-  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 #courses .courses_cards .course_card:hover {
   transform: translateY(-10px);
@@ -469,6 +622,39 @@ section#features .features_card p {
   background-color: #000;
   color: var(--primary-color);
 }
+@media (max-width: 992px) {
+  #courses {
+    padding: 60px 40px;
+  }
+  #courses .courses_cards .course_card {
+    width: calc(50% - 20px);
+    min-height: auto;
+  }
+}
+@media (max-width: 576px) {
+  #courses {
+    padding: 40px 20px;
+  }
+  #courses h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  #courses .courses_cards {
+    gap: 20px;
+  }
+  #courses .courses_cards .course_card {
+    width: 100%;
+    padding: 15px;
+  }
+  #courses .courses_cards .course_card h3 {
+    font-size: 1.2rem;
+  }
+  #courses .courses_cards .course_card a,
+  #courses .courses_cards .course_card a.second_button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+}
 
 #steps {
   display: flex;
@@ -476,6 +662,9 @@ section#features .features_card p {
   align-items: center;
   padding: 20px 100px 60px;
   background-color: #fff;
+  /* Tablet adjustments */
+  /* Mobile adjustments */
+  /* Small mobile adjustments */
 }
 #steps div#steps_content {
   width: calc(50% - 150px);
@@ -535,22 +724,79 @@ section#features .features_card p {
   height: auto;
   border-radius: 10px;
 }
+@media (max-width: 992px) {
+  #steps {
+    padding: 20px 40px;
+  }
+  #steps div#steps_content {
+    width: 50%;
+  }
+  #steps div#steps_content h2 {
+    font-size: 2rem;
+    line-height: 2.8rem;
+  }
+  #steps div#steps_content p {
+    font-size: 0.95rem;
+  }
+  #steps div#steps_image {
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  #steps {
+    flex-direction: column;
+    padding: 20px;
+  }
+  #steps div#steps_content,
+  #steps div#steps_image {
+    width: 100%;
+  }
+  #steps div#steps_content {
+    order: 2;
+    text-align: center;
+  }
+  #steps div#steps_content .steps_list {
+    align-items: center;
+  }
+  #steps div#steps_content .steps_list .steps_list_item {
+    gap: 10px;
+    font-size: 1rem;
+  }
+  #steps div#steps_content .steps_list .steps_list_item img {
+    width: 24px;
+    height: 24px;
+  }
+  #steps div#steps_image {
+    order: 1;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 480px) {
+  #steps div#steps_content h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  #steps div#steps_content p {
+    font-size: 0.9rem;
+  }
+}
 
 #order {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #F9C265;
+  background: var(--primary-color);
   position: relative;
   margin: -100px auto -180px;
-  background: var(--primary-color);
   border-radius: 32px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   padding: 40px 60px;
   gap: 40px;
-  min-width: 750px;
   max-width: 1350px;
+  flex-wrap: wrap;
   z-index: 10;
+  /* Tablet adjustments */
+  /* Mobile adjustments */
 }
 #order #order_image {
   width: 340px;
@@ -560,6 +806,7 @@ section#features .features_card p {
   width: 100%;
   height: auto;
   background: transparent;
+  border-radius: 16px;
 }
 #order #order_content {
   flex: 1;
@@ -568,7 +815,7 @@ section#features .features_card p {
   justify-content: center;
   align-items: flex-start;
   gap: 18px;
-  padding: 10px auto;
+  padding: 10px 0;
 }
 #order #order_content h2 {
   font-size: 2.4rem;
@@ -616,6 +863,43 @@ section#features .features_card p {
   color: #fff;
   transform: translateY(-2px);
 }
+@media (max-width: 992px) {
+  #order {
+    margin: -50px auto -100px;
+    padding: 30px 40px;
+    gap: 30px;
+  }
+  #order #order_image {
+    width: 280px;
+  }
+  #order #order_content p {
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  #order {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto 40px;
+    padding: 30px 20px;
+  }
+  #order #order_image {
+    width: 100%;
+    max-width: 300px;
+  }
+  #order #order_content {
+    align-items: center;
+  }
+  #order #order_content h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  #order #order_content p {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+}
 
 #app {
   width: 100%;
@@ -628,6 +912,7 @@ section#features .features_card p {
   padding: 260px 100px 120px;
   gap: 30px;
 }
+
 #app h2 {
   color: var(--secondary-color);
   font-size: 2.2rem;
@@ -635,6 +920,7 @@ section#features .features_card p {
   max-width: calc(35% - 100px);
   margin-bottom: 30px;
 }
+
 #app h2 span {
   display: inline-block;
   background-color: var(--primary-color);
@@ -648,7 +934,7 @@ section#features .features_card p {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
 
-/* googleplay button ready from online */
+/* Google Play Button */
 @font-face {
   font-family: "fontfutura";
   src: url("https://fonts.googleapis.com/css?family=Open+Sans") format("ttf");
@@ -696,7 +982,6 @@ a.btn-google {
 
 .btn:active {
   outline: 0;
-  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
 }
 
@@ -716,7 +1001,8 @@ a.btn-google {
   border-color: #000;
 }
 
-.btn-google:active, .btn-google:hover {
+.btn-google:active,
+.btn-google:hover {
   color: #fff;
   background-color: #555;
   border-color: #000;
@@ -744,7 +1030,7 @@ a.btn-google {
   font-weight: 400;
 }
 
-/* appstore button ready from online */
+/* Apple Store Button */
 .btn-apple {
   color: #fff;
   background-color: #111;
@@ -771,7 +1057,8 @@ a.btn-google {
   border-color: #000;
 }
 
-.btn-apple:active, .btn-apple:hover {
+.btn-apple:active,
+.btn-apple:hover {
   color: #fff;
   background-color: #555;
   border-color: #000;

@@ -1,26 +1,26 @@
-    #order {
+#order {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #F9C265;
-    position: relative;
-    margin: -100px auto -180px; // Center the section and pull up
     background: var(--primary-color);
+    position: relative;
+    margin: -100px auto -180px;
     border-radius: 32px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
     padding: 40px 60px;
     gap: 40px;
-    min-width: 750px;
-    max-width: 1350px; // Pull up to overlap previous section
+    max-width: 1350px;
+    flex-wrap: wrap;
     z-index: 10;
 
     #order_image {
         width: 340px;
         flex-shrink: 0;
         img {
-        width: 100%;
-        height: auto;
-        background: transparent;
+            width: 100%;
+            height: auto;
+            background: transparent;
+            border-radius: 16px;
         }
     }
 
@@ -31,15 +31,15 @@
         justify-content: center;
         align-items: flex-start;
         gap: 18px;
-        padding: 10px auto;
+        padding: 10px 0;
 
         h2 {
-        font-size: 2.4rem;
-        color: #222;
-        font-family: 'Lato', sans-serif;
-        font-weight: 700;
-        margin-bottom: 10px;
-        span {
+            font-size: 2.4rem;
+            color: #222;
+            font-family: 'Lato', sans-serif;
+            font-weight: 700;
+            margin-bottom: 10px;
+            span {
                 display: inline-block;
                 color: var(--secondary-color);
                 padding: 0.4rem 1.4rem;
@@ -49,35 +49,78 @@
                 font-family: Georgia, 'Times New Roman', Times, serif;
             }
         }
+
         p {
-        font-size: 1rem;
-        color: #444;
-        line-height: 1.5;
-        margin-bottom: 10px;
-        max-width: 70%;
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.5;
+            margin-bottom: 10px;
+            max-width: 70%;
         }
+
         a {
-        text-decoration: none;
-        button {
-            background: #111;
-            color: var(--primary-color);
-            border: none;
-            border-radius: 9999px;
-            padding: 14px 32px;
-            font-size: 1.1rem;
-            font-family: inherit;
-            font-weight: 200;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.10);
-            display: flex;
-            align-items: center;
-            transition: background 0.2s, transform 0.2s;
-            &:hover {
-            background: #ca6e04;
-            color: #fff;
-            transform: translateY(-2px);
+            text-decoration: none;
+            button {
+                background: #111;
+                color: var(--primary-color);
+                border: none;
+                border-radius: 9999px;
+                padding: 14px 32px;
+                font-size: 1.1rem;
+                font-family: inherit;
+                font-weight: 200;
+                cursor: pointer;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+                display: flex;
+                align-items: center;
+                transition: background 0.2s, transform 0.2s;
+                &:hover {
+                    background: #ca6e04;
+                    color: #fff;
+                    transform: translateY(-2px);
+                }
             }
         }
+    }
+
+    /* Tablet adjustments */
+    @media (max-width: 992px) {
+        margin: -50px auto -100px;
+        padding: 30px 40px;
+        gap: 30px;
+
+        #order_image {
+            width: 280px;
+        }
+
+        #order_content p {
+            max-width: 100%;
+        }
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto 40px;
+        padding: 30px 20px;
+
+        #order_image {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        #order_content {
+            align-items: center;
+            h2 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            p {
+                max-width: 100%;
+                font-size: 0.95rem;
+            }
         }
     }
 }
