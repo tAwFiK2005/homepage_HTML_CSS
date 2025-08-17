@@ -1,4 +1,5 @@
 @use './variables';
+@use './cusomize';
 @use './nav';
 @use './header';
 @use '_advertisment';
@@ -15,7 +16,7 @@
 }
 body {
     font-family: var(--font-family);
-    background-color: var(--background-color);
+    background-color: var(--background-color2);
     color: var(--text-color);
 }
 h1, h2, h3, h4, h5, h6 {

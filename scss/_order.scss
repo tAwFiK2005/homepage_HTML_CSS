@@ -35,7 +35,7 @@
 
         h2 {
             font-size: 2.4rem;
-            color: #222;
+            color: var(--secondary-color);
             font-family: 'Lato', sans-serif;
             font-weight: 700;
             margin-bottom: 10px;
@@ -52,7 +52,7 @@
 
         p {
             font-size: 1rem;
-            color: #444;
+            color: var(--secondary-color);
             line-height: 1.5;
             margin-bottom: 10px;
             max-width: 70%;
@@ -61,7 +61,7 @@
         a {
             text-decoration: none;
             button {
-                background: #111;
+                background: var(--secondary-color);
                 color: var(--primary-color);
                 border: none;
                 border-radius: 9999px;
@@ -70,13 +70,13 @@
                 font-family: inherit;
                 font-weight: 200;
                 cursor: pointer;
-                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+                box-shadow: 0 5px 15px var(--secondary-color);
                 display: flex;
                 align-items: center;
                 transition: background 0.2s, transform 0.2s;
                 &:hover {
-                    background: #ca6e04;
-                    color: #fff;
+                    background: var(--primary-color);
+                    color: var(--background-color);
                     transform: translateY(-2px);
                 }
             }

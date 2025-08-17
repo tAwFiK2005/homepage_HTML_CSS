@@ -1,10 +1,8 @@
-body {
-  background: #FDF6E4 !important;
-}
+
 
 footer{
     margin: 0 auto;
-    background-color: #1E1E1E;
+    background-color: var(--secondary-color);
     position: relative;
     border-top-left-radius: 64px;
     border-top-right-radius: 64px;
@@ -14,7 +12,7 @@ footer{
     width: 70%;
     min-width: 320px;
     min-height: 30vh;
-    color:#FDF6E4;
+    color:var(--background-color2);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -57,7 +55,7 @@ footer {
             }
                 h2 {
                 font-size: 1.4rem;
-                color: #fff;
+                color: var(--text2-color);
                 font-weight: 700;
                 margin: 0 0px 10px 0px;
             }
@@ -65,7 +63,7 @@ footer {
             p{
                 width: 300px;
                 font-size: 0.8rem;
-                color: #ddd;
+                color: var(--text2-color);
                 line-height: 1.5;
             }
         }
@@ -76,7 +74,7 @@ footer {
             flex-direction: column;
             h3{
                 font-size: 1.2rem;
-                color: #fff;
+                color: var(--background-color);
                 margin-bottom: 10px;
             }
             ul{
@@ -86,14 +84,14 @@ footer {
                 }
                 li{
                     font-size: 0.9rem;
-                    color: #ddd;
+                    color: var(--text2-color);
                     margin-bottom: 5px;
                     padding: 20px 0;
                     a{
                         text-decoration: none;
-                        color: #ddd;
+                        color: var(--text2-color);
                         &:hover{
-                            color: #fff;
+                            color: var(--background-color);
                         }
                     }
                 }
@@ -110,20 +108,20 @@ footer {
         flex-wrap: nowrap;
         gap: 20px;
         font-size: 0.8rem;
-        color: #ddd;
+        color: var(--text2-color);
         #copyright{
             flex: 1;
             text-align: left;
-            color: #ddd;
+            color: var(--background-color);
         }
         #terms{
             flex: 1;
             text-align: right;
             a{
-                color: #ddd;
+                color: var(--text2-color);
                 text-decoration: none;
                 &:hover{
-                    color: #fff;
+                    color: var(--background-color);
                 }
             }
         }

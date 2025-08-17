@@ -1,5 +1,5 @@
 section#advertisment_section {
-  background-color: #FDF6E4;
+  background-color: var(--background-color2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,14 +28,14 @@ section#advertisment_section {
     gap: 20px;
 
     h2 {
-      color: var(--secondary-color);
+      color: var(--text-color);
       font-size: 3rem;
       text-align: left;
 
       span {
         display: inline-block;
         background-color: var(--primary-color);
-        color: var(--secondary-color);
+        color: var(--text-color);
         padding: 0.4rem 1.4rem;
         border-radius: 9999px;
         border: 2px solid var(--secondary-color);
@@ -50,7 +50,7 @@ section#advertisment_section {
       font-size: 1rem;
       line-height: 1.4;
       text-align: left;
-      color: #A29E95;
+      color: var(--text2-color);
     }
   }
 

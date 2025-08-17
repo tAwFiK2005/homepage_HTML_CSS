@@ -3,20 +3,20 @@
   justify-content: space-around;
   align-items: center;
   padding: 20px 100px 60px;
-  background-color: #fff;
+  background-color: var(--background-color);
 
   div#steps_content {
     width: calc(50% - 150px);
 
     h2 {
       font-size: 2.5rem;
-      color: var(--secondary-color);
+      color: var(--text-color);
       line-height: 3.4rem;
 
       span {
         display: inline-block;
         background-color: var(--primary-color);
-        color: var(--secondary-color);
+        color: var(--text-color);
         padding: 0.4rem 1.4rem;
         border-radius: 9999px;
         border: 2px solid var(--secondary-color);
@@ -31,7 +31,7 @@
       padding: 20px 0;
       font-size: 1rem;
       line-height: 1.4;
-      color: #666;
+      color: var(--text2-color);
     }
 
     div.steps_list {
@@ -46,7 +46,7 @@
         flex-shrink: 0;
         gap: 20px;
         font-size: 1.2rem;
-        color: #000;
+        color: var(--text-color);
 
         img {
           display: inline-block;

@@ -1,0 +1,67 @@
+/* Sidebar hidden by default */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0px;
+    width: 400px;
+    height: 100%;
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    line-height: 2rem;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    transition: right 0.3s ease;
+    padding: 20px;
+    z-index: 1001;
+    transition: background-color 0.3s ease;
+}
+
+/* Sidebar visible */
+.sidebar.active {
+    right: 0;
+}
+
+/* Customize button style */
+.customize_btn {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+    background:var(--background-color);
+    top: 450px;
+    right: 20px;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    gap: 10px;
+    font-size: 16px;
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+    writing-mode:sideways-lr;
+    &:hover {
+        background-color: var(--primary-color);
+        color: var(--background-color);
+    }
+    i {
+        font-size: 24px;
+    }
+    span {
+        font-weight: bold;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+/* Close (X) button in sidebar */
+.close_btn {
+    background: none;
+    border: none;
+    font-size: 48px;
+    cursor: pointer;
+    float: right;
+    color: red;
+}

@@ -1,10 +1,80 @@
 :root {
   --primary-color: #F9C265;
-  --secondary-color: #1C1715;
+  --secondary-color: #212529;
   --text-color: #1C1715;
+  --text2-color: #A29E95;
   --background-color: #fff;
+  --background-color2: #FDF6E4;
   --font-family: "Inter", sans-serif;
   font-size: 24px;
+}
+
+/* Sidebar hidden by default */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0px;
+  width: 400px;
+  height: 100%;
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  line-height: 2rem;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  padding: 20px;
+  z-index: 1001;
+  transition: background-color 0.3s ease;
+}
+
+/* Sidebar visible */
+.sidebar.active {
+  right: 0;
+}
+
+/* Customize button style */
+.customize_btn {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1001;
+  background: var(--background-color);
+  top: 450px;
+  right: 20px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  gap: 10px;
+  font-size: 16px;
+  color: var(--text-color);
+  transition: background-color 0.3s ease;
+  writing-mode: sideways-lr;
+}
+.customize_btn:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+.customize_btn i {
+  font-size: 24px;
+}
+.customize_btn span {
+  font-weight: bold;
+}
+.customize_btn:focus {
+  outline: none;
+}
+
+/* Close (X) button in sidebar */
+.close_btn {
+  background: none;
+  border: none;
+  font-size: 48px;
+  cursor: pointer;
+  float: right;
+  color: red;
 }
 
 nav {
@@ -36,7 +106,7 @@ nav ul li a {
   font-weight: bold;
 }
 nav ul li a:hover {
-  color: #ca6e04;
+  color: var(--primary-color);
 }
 nav .nav_logo {
   display: flex;
@@ -61,9 +131,16 @@ a {
   color: var(--text-color);
 }
 
+div.nav_mobile {
+  display: none;
+  font-size: 2rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
 button.login_btn {
   background-color: transparent;
-  color: #000;
+  color: var(--text-color);
   padding: 8px 16px;
   font-weight: 400;
   font-size: 24px;
@@ -72,21 +149,21 @@ button.login_btn {
   cursor: pointer;
 }
 button.login_btn a {
-  color: #000;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: 400;
   font-size: 24px;
 }
 button.login_btn:hover {
-  background-color: #ca6e04;
+  background-color: var(--primary-color);
   transition: 0.2s ease-in-out;
 }
 button.login_btn:hover a {
-  color: #fff;
+  color: var(--background-color);
   transition: 0.2s ease-in-out;
 }
 button.signup_btn {
-  background-color: #111;
+  background-color: var(--text-color);
   padding: 8px 16px;
   border: none;
   border-radius: 999px;
@@ -95,18 +172,49 @@ button.signup_btn {
   font-size: 24px;
 }
 button.signup_btn a {
-  color: #fff;
+  color: var(--background-color);
   text-decoration: none;
   font-weight: 400;
   font-size: 24px;
 }
 button.signup_btn:hover {
-  background-color: #ca6e04;
+  background-color: var(--primary-color);
   transition: 0.2s ease-in-out;
 }
 button.signup_btn:hover a {
-  color: #000;
+  color: var(--text-color);
   transition: 0.2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  div.nav_mobile {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  ul.nav_list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    left: 0;
+    background-color: var(--secondary-color);
+    padding: 20px;
+    gap: 10px;
+  }
+  ul.nav_list li {
+    text-align: center;
+    width: 100%;
+  }
+  ul.nav_list li a {
+    color: var(--primary-color);
+    display: block;
+    padding: 10px 0;
+  }
+}
+.nav_list.active {
+  display: flex;
 }
 
 #header {
@@ -124,10 +232,11 @@ button.signup_btn:hover a {
   font-size: 3.6rem;
   font-weight: 600;
   width: 100%;
+  color: var(--text-color);
 }
 #header .header_head h1 span.highlight_span {
   display: inline-block;
-  background-color: var(--secondary-color);
+  background-color: var(--text-color);
   color: var(--primary-color);
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
@@ -140,16 +249,16 @@ button.signup_btn:hover a {
 }
 #header .enrollnow button {
   background-color: transparent;
-  color: #000;
+  color: var(--text-color);
   font-weight: 400;
   font-size: 24px;
-  border: solid 2px #000;
+  border: solid 2px var(--text-color);
   border-radius: 999px;
   width: 250px;
   height: 70px;
 }
 #header .enrollnow button a {
-  color: #000;
+  color: var(--text-color);
   text-decoration: none;
   font-weight: 400;
   font-size: 24px;
@@ -184,7 +293,7 @@ button.signup_btn:hover a {
   display: flex;
   justify-content: center;
   padding: 100px 0;
-  background-color: #ffffff;
+  background-color: var(--background-color);
   font-family: "Gill Sans", sans-serif;
 }
 #header .stats-bar ul {
@@ -207,16 +316,16 @@ button.signup_btn:hover a {
 #header .stats-bar .stat-item .stat-number {
   font-size: 1.6rem;
   font-weight: bold;
-  color: #1c1d1f;
+  color: var(--text-color);
 }
 #header .stats-bar .stat-item .stat-label {
   font-size: 0.875rem;
-  color: #6a6f73;
+  color: var(--secondary-color);
   margin-top: 5px;
 }
 #header .stats-bar .stat-item:not(:first-child) {
   padding-left: 80px;
-  border-left: 1px solid #bcb90c;
+  border-left: 1px solid var(--primary-color);
 }
 @media (max-width: 992px) {
   #header .header_head,
@@ -247,7 +356,7 @@ button.signup_btn:hover a {
 }
 @media (max-width: 576px) {
   #header {
-    padding: 50px 0 0;
+    padding: 80px 0 0;
   }
   #header .header_head h1 {
     font-size: 2rem;
@@ -274,7 +383,7 @@ button.signup_btn:hover a {
 }
 
 section#advertisment_section {
-  background-color: #FDF6E4;
+  background-color: var(--background-color2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -304,14 +413,14 @@ section#advertisment_section div#advertisment_text {
   gap: 20px;
 }
 section#advertisment_section div#advertisment_text h2 {
-  color: var(--secondary-color);
+  color: var(--text-color);
   font-size: 3rem;
   text-align: left;
 }
 section#advertisment_section div#advertisment_text h2 span {
   display: inline-block;
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: var(--text-color);
   padding: 0.4rem 1.4rem;
   border-radius: 9999px;
   border: 2px solid var(--secondary-color);
@@ -324,7 +433,7 @@ section#advertisment_section div#advertisment_text p {
   font-size: 1rem;
   line-height: 1.4;
   text-align: left;
-  color: #A29E95;
+  color: var(--text2-color);
 }
 @media (max-width: 992px) {
   section#advertisment_section {
@@ -367,7 +476,7 @@ section#advertisment_section div#advertisment_text p {
 }
 
 section#features {
-  background-color: #FDFDFB;
+  background-color: var(--background-color);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -387,8 +496,8 @@ section#features #features_head {
   justify-content: center;
   gap: 50px;
   align-items: flex-start;
-  background-color: #212529;
-  color: #ffffff;
+  background-color: var(--secondary-color);
+  color: var(--background-color);
   padding: 80px 60px;
   border-radius: 15px;
   flex-wrap: nowrap;
@@ -399,13 +508,13 @@ section#features #features_head {
 }
 section#features #features_head:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 15px 30px var(--text-color);
 }
 section#features #features_head h2 {
   font-size: 2.5rem;
   font-weight: 700;
   margin: 0;
-  color: #ffffff;
+  color: --var(--background-color);
   max-width: 60%;
 }
 section#features #features_head h2 #features_head_Features {
@@ -413,15 +522,15 @@ section#features #features_head h2 #features_head_Features {
   font-style: italic;
   font-weight: 300;
   font-family: Georgia, "Times New Roman", Times, serif;
-  color: #D9B269;
+  color: var(--primary-color);
 }
 section#features #features_head a {
   text-decoration: none;
   margin-top: auto;
 }
 section#features #features_head a button {
-  background-color: #D9B269;
-  color: #212529;
+  background-color: var(--primary-color);
+  color: var(--text-color);
   border: none;
   padding: 15px 30px;
   font-size: 1rem;
@@ -432,10 +541,10 @@ section#features #features_head a button {
 }
 section#features #features_head a button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 15px var(--text-color);
 }
 section#features .features_card {
-  background-color: #ffffff;
+  background-color: var(--background-color);
   padding: 35px;
   border-radius: 15px;
   box-shadow: 0 10px 25px rgb(0, 0, 0);
@@ -449,7 +558,7 @@ section#features .features_card {
 }
 section#features .features_card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 15px 30px var(--text-color);
 }
 section#features .features_card img {
   width: 100px;
@@ -459,12 +568,12 @@ section#features .features_card img {
 section#features .features_card h3 {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #343a40;
+  color: -var(--secondary-color);
   margin: 0;
 }
 section#features .features_card p {
   font-size: 1rem;
-  color: #6c757d;
+  color: -var(--secondary-color);
   line-height: 1.6;
   margin: 0;
 }
@@ -518,13 +627,13 @@ section#features .features_card p {
 
 #courses {
   padding: 80px 100px;
-  background-color: #1F1F1F;
+  background-color: var(--secondary-color);
   /* --- Responsive --- */
   /* Tablet: 2 cards per row */
   /* Mobile: 1 card per row */
 }
 #courses h2 {
-  color: #fff;
+  color: var(--background-color);
   font-size: 2.6rem;
   text-align: center;
   margin: 20px 0px 80px;
@@ -551,11 +660,11 @@ section#features .features_card p {
   font-family: "Poppins", sans-serif;
 }
 #courses .courses_cards .course_card {
-  background-color: #fff;
+  background-color: var(--background-color);
   border-radius: 15px;
   padding: 20px;
   width: calc(33.33% - 40px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px var(--secondary-color);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   min-height: 680px;
   display: flex;
@@ -564,7 +673,7 @@ section#features .features_card p {
 }
 #courses .courses_cards .course_card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 15px 30px var(--secondary-color);
 }
 #courses .courses_cards .course_card figure img {
   width: 100%;
@@ -581,7 +690,7 @@ section#features .features_card p {
 #courses .courses_cards .course_card div.course_rec p {
   display: inline-block;
   font-size: 1rem;
-  color: #666;
+  color: var(--text2-color);
   margin-top: 10px;
 }
 #courses .courses_cards .course_card div.course_rec img {
@@ -592,14 +701,14 @@ section#features .features_card p {
   font-size: 1.4rem;
   margin-top: 15px;
   margin-bottom: 20px;
-  color: #333;
+  color: var(--secondary-color);
 }
 #courses .courses_cards .course_card a {
   display: inline-block;
   color: var(text-color);
   padding: 0.8rem 1.4rem;
   border-radius: 9999px;
-  border: 2px solid #1F1F1F;
+  border: 2px solid var(--secondary-color);
   line-height: 1;
   font-weight: 300;
   transition: all 0.3s ease-in-out;
@@ -613,13 +722,13 @@ section#features .features_card p {
   color: var(text-color);
   padding: 0.8rem 1.4rem;
   border-radius: 9999px;
-  border: 2px solid #1F1F1F;
+  border: 2px solid var(--text-color);
   line-height: 1;
   font-weight: 300;
   transition: all 0.3s ease-in-out;
 }
 #courses .courses_cards .course_card a.second_button:hover {
-  background-color: #000;
+  background-color: var(--text-color);
   color: var(--primary-color);
 }
 @media (max-width: 992px) {
@@ -661,7 +770,7 @@ section#features .features_card p {
   justify-content: space-around;
   align-items: center;
   padding: 20px 100px 60px;
-  background-color: #fff;
+  background-color: var(--background-color);
   /* Tablet adjustments */
   /* Mobile adjustments */
   /* Small mobile adjustments */
@@ -671,13 +780,13 @@ section#features .features_card p {
 }
 #steps div#steps_content h2 {
   font-size: 2.5rem;
-  color: var(--secondary-color);
+  color: var(--text-color);
   line-height: 3.4rem;
 }
 #steps div#steps_content h2 span {
   display: inline-block;
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: var(--text-color);
   padding: 0.4rem 1.4rem;
   border-radius: 9999px;
   border: 2px solid var(--secondary-color);
@@ -690,7 +799,7 @@ section#features .features_card p {
   padding: 20px 0;
   font-size: 1rem;
   line-height: 1.4;
-  color: #666;
+  color: var(--text2-color);
 }
 #steps div#steps_content div.steps_list {
   display: flex;
@@ -704,7 +813,7 @@ section#features .features_card p {
   flex-shrink: 0;
   gap: 20px;
   font-size: 1.2rem;
-  color: #000;
+  color: var(--text-color);
 }
 #steps div#steps_content div.steps_list .steps_list_item img {
   display: inline-block;
@@ -819,7 +928,7 @@ section#features .features_card p {
 }
 #order #order_content h2 {
   font-size: 2.4rem;
-  color: #222;
+  color: var(--secondary-color);
   font-family: "Lato", sans-serif;
   font-weight: 700;
   margin-bottom: 10px;
@@ -835,7 +944,7 @@ section#features .features_card p {
 }
 #order #order_content p {
   font-size: 1rem;
-  color: #444;
+  color: var(--secondary-color);
   line-height: 1.5;
   margin-bottom: 10px;
   max-width: 70%;
@@ -844,7 +953,7 @@ section#features .features_card p {
   text-decoration: none;
 }
 #order #order_content a button {
-  background: #111;
+  background: var(--secondary-color);
   color: var(--primary-color);
   border: none;
   border-radius: 9999px;
@@ -853,14 +962,14 @@ section#features .features_card p {
   font-family: inherit;
   font-weight: 200;
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px var(--secondary-color);
   display: flex;
   align-items: center;
   transition: background 0.2s, transform 0.2s;
 }
 #order #order_content a button:hover {
-  background: #ca6e04;
-  color: #fff;
+  background: var(--primary-color);
+  color: var(--background-color);
   transform: translateY(-2px);
 }
 @media (max-width: 992px) {
@@ -908,13 +1017,13 @@ section#features .features_card p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #FDF6E4;
+  background-color: var(--background-color2);
   padding: 260px 100px 120px;
   gap: 30px;
 }
 
 #app h2 {
-  color: var(--secondary-color);
+  color: var(--text-color);
   font-size: 2.2rem;
   text-align: center;
   max-width: calc(35% - 100px);
@@ -924,7 +1033,7 @@ section#features .features_card p {
 #app h2 span {
   display: inline-block;
   background-color: var(--primary-color);
-  color: var(--secondary-color);
+  color: var(--text-color);
   padding: 0.4rem 1.4rem;
   border-radius: 9999px;
   border: 2px solid var(--secondary-color);
@@ -942,7 +1051,7 @@ section#features .features_card p {
   font-style: normal;
 }
 a.btn-google {
-  color: #fff;
+  color: var(--background-color);
 }
 
 .btn {
@@ -975,20 +1084,20 @@ a.btn-google {
 }
 
 .btn:focus, .btn:hover {
-  color: #333;
+  color: var(--secondary-color);
   text-decoration: none;
   outline: 0;
 }
 
 .btn:active {
   outline: 0;
-  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px var(--secondary-color);
 }
 
 .btn-google {
-  color: #fff;
-  background-color: #111;
-  border-color: #000;
+  color: var(--background-color);
+  background-color: var(--secondary-color);
+  border-color: var(--text-color);
   padding: 28px 16px 5px 40px;
   position: relative;
   font-family: fontfutura;
@@ -996,16 +1105,16 @@ a.btn-google {
 }
 
 .btn-google:focus {
-  color: #fff;
-  background-color: #555;
-  border-color: #000;
+  color: var(--background-color);
+  background-color: var(--secondary-color);
+  border-color: var(--text-color);
 }
 
 .btn-google:active,
 .btn-google:hover {
-  color: #fff;
-  background-color: #555;
-  border-color: #000;
+  color: var(--background-color);
+  background-color: var(--secondary-color);
+  border-color: var(--text-color);
 }
 
 .btn-google:before {
@@ -1032,9 +1141,9 @@ a.btn-google {
 
 /* Apple Store Button */
 .btn-apple {
-  color: #fff;
-  background-color: #111;
-  border-color: #000;
+  color: var(--background-color);
+  background-color: var(--secondary-color);
+  border-color: var(--text-color);
   padding: 28px 16px 5px 40px;
   position: relative;
   font-family: fontfutura;
@@ -1052,16 +1161,16 @@ a.btn-google {
 }
 
 .btn-apple:focus {
-  color: #fff;
-  background-color: #555;
-  border-color: #000;
+  color: var(--background-color);
+  background-color: var(--secondary-color);
+  border-color: var(--text-color);
 }
 
 .btn-apple:active,
 .btn-apple:hover {
-  color: #fff;
-  background-color: #555;
-  border-color: #000;
+  color: var(--background-color);
+  background-color: var(--secondary-color);
+  border-color: var(--text-color);
 }
 
 .btn-apple:before {
@@ -1085,13 +1194,26 @@ a.btn-google {
   font-weight: 400;
 }
 
-body {
-  background: #FDF6E4 !important;
+@media (max-width: 768px) {
+  #app {
+    padding: 20px 20px;
+  }
+  #app h2 {
+    font-size: 1.8rem;
+    max-width: 100%;
+  }
+  .btn {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+  }
+  .btn-google, .btn-apple {
+    padding: 20px 10px;
+  }
 }
-
 footer {
   margin: 0 auto;
-  background-color: #1E1E1E;
+  background-color: var(--secondary-color);
   position: relative;
   border-top-left-radius: 64px;
   border-top-right-radius: 64px;
@@ -1101,7 +1223,7 @@ footer {
   width: 70%;
   min-width: 320px;
   min-height: 30vh;
-  color: #FDF6E4;
+  color: var(--background-color2);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -1146,14 +1268,14 @@ footer .main_footer #footer_top_left_content .idn img {
 }
 footer .main_footer #footer_top_left_content .idn h2 {
   font-size: 1.4rem;
-  color: #fff;
+  color: var(--text2-color);
   font-weight: 700;
   margin: 0 0px 10px 0px;
 }
 footer .main_footer #footer_top_left_content p {
   width: 300px;
   font-size: 0.8rem;
-  color: #ddd;
+  color: var(--text2-color);
   line-height: 1.5;
 }
 footer .main_footer .footer_lists {
@@ -1164,7 +1286,7 @@ footer .main_footer .footer_lists {
 }
 footer .main_footer .footer_lists h3 {
   font-size: 1.2rem;
-  color: #fff;
+  color: var(--background-color);
   margin-bottom: 10px;
 }
 footer .main_footer .footer_lists ul {
@@ -1175,16 +1297,16 @@ footer .main_footer .footer_lists ul :first-child {
 }
 footer .main_footer .footer_lists ul li {
   font-size: 0.9rem;
-  color: #ddd;
+  color: var(--text2-color);
   margin-bottom: 5px;
   padding: 20px 0;
 }
 footer .main_footer .footer_lists ul li a {
   text-decoration: none;
-  color: #ddd;
+  color: var(--text2-color);
 }
 footer .main_footer .footer_lists ul li a:hover {
-  color: #fff;
+  color: var(--background-color);
 }
 
 .bottom {
@@ -1196,23 +1318,23 @@ footer .main_footer .footer_lists ul li a:hover {
   flex-wrap: nowrap;
   gap: 20px;
   font-size: 0.8rem;
-  color: #ddd;
+  color: var(--text2-color);
 }
 .bottom #copyright {
   flex: 1;
   text-align: left;
-  color: #ddd;
+  color: var(--background-color);
 }
 .bottom #terms {
   flex: 1;
   text-align: right;
 }
 .bottom #terms a {
-  color: #ddd;
+  color: var(--text2-color);
   text-decoration: none;
 }
 .bottom #terms a:hover {
-  color: #fff;
+  color: var(--background-color);
 }
 
 * {
@@ -1223,7 +1345,7 @@ footer .main_footer .footer_lists ul li a:hover {
 
 body {
   font-family: var(--font-family);
-  background-color: var(--background-color);
+  background-color: var(--background-color2);
   color: var(--text-color);
 }
 

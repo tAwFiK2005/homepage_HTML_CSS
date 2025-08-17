@@ -1,9 +1,9 @@
 #courses {
   padding: 80px 100px;
-  background-color: #1F1F1F;
+  background-color: var(--secondary-color);
 
   h2 {
-    color: #fff;
+    color: var(--background-color);
     font-size: 2.6rem;
     text-align: center;
     margin: 20px 0px 80px;
@@ -32,11 +32,11 @@
     font-family: 'Poppins', sans-serif;
 
     .course_card {
-      background-color: #fff;
+      background-color: var(--background-color);
       border-radius: 15px;
       padding: 20px;
       width: calc(33.33% - 40px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 25px var(--secondary-color);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       min-height: 680px;
       display: flex;
@@ -45,7 +45,7 @@
 
       &:hover {
         transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 15px 30px var(--secondary-color);;
       }
 
       figure {
@@ -66,7 +66,7 @@
         p {
           display: inline-block;
           font-size: 1rem;
-          color: #666;
+          color: var(--text2-color);
           margin-top: 10px;
         }
 
@@ -80,7 +80,7 @@
         font-size: 1.4rem;
         margin-top: 15px;
         margin-bottom: 20px;
-        color: #333;
+        color: var(--secondary-color);
       }
 
       a {
@@ -88,7 +88,7 @@
         color: var(text-color);
         padding: 0.8rem 1.4rem;
         border-radius: 9999px;
-        border: 2px solid #1F1F1F;
+        border: 2px solid var(--secondary-color);
         line-height: 1;
         font-weight: 300;
         transition: all 0.3s ease-in-out;
@@ -104,13 +104,13 @@
         color: var(text-color);
         padding: 0.8rem 1.4rem;
         border-radius: 9999px;
-        border: 2px solid #1F1F1F;
+        border: 2px solid var(--text-color);
         line-height: 1;
         font-weight: 300;
         transition: all 0.3s ease-in-out;
 
         &:hover {
-          background-color: #000;
+          background-color: var(--text-color);
           color: var(--primary-color);
         }
       }

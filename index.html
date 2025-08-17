@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>MONAC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="photos/logo.png" type="image/x-icon">
+    <link rel="icon" href="photos/logo2.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,8 +13,35 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    <!-- Customize color -->
+    <button id="customizeBtn" class="customize_btn">
+        <i class="fa-solid fa-gear"></i>
+        <span>Customize</span>
+    </button>
+    <!-- Customize sidebar -->
+    <div id="customizeSidebar" class="sidebar">
+        <button id="closeSidebar" class="close_btn">×</button>
+        <h3>Theme Settings</h3>
+        <label>Primary Color</label>
+        <input type="color" id="primaryColor" value="#F9C265">
+        <br>
+        <label>Secondary Color</label>
+        <input type="color" id="secondaryColor" value="#212529">
+        <br>
+        <label>Text Color</label>
+        <input type="color" id="textColor" value="#1C1715">
+        <br>
+        <label>Secondary Text Color</label>
+        <input type="color" id="textColor2" value="#A29E95">
+        <br>
+        <label>Background Color</label>
+        <input type="color" id="backgroundColor" value="#ffffff">
+        <label>Secondary Background Color </label>
+        <input type="color" id="backgroundColor2" value="#FDF6E4">
+    </div>
     <!--start navbar-->
     <nav>
+        <div class = "nav_mobile">☰</div>
         <!--pages_navigator-->
         <ul class = "nav_list">
             <li><a href="#header">Home</a></li>
@@ -23,7 +50,7 @@
         </ul>
         <!--nav_company_logo-->
         <div class = "nav_logo">
-            <img src="photos/logo.png" alt="company logo">
+            <img src="photos/logo2.png" alt="company logo">
             <p><strong>MONAC</strong></p>
         </div>
         <!--nav_buttons-->
@@ -31,7 +58,6 @@
             <button class="login_btn"><a href="login.html">Log In</a></button>
             <button class="signup_btn"><a href="sigin.html">Sign Up</a></button>
         </div>
-
     </nav>
     <!--end navbar-->
 
@@ -314,5 +340,7 @@
         
     </footer>
     <!--end footer-->
+
+    <script src ="js/script.js"></script>
 </body>
 </html>
